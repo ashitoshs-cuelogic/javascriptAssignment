@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: gray;
+}
+
+.container {
+    width:40%;
+    height:40%;
+    border:1px solid black;
+    border-radius: 15px 15px 15px 15px;
+    background-color:white;
+    position: fixed; /* or absolute */
+    top: 25%;
+    left: 25%;
+    padding: 25px;
+  }
+  
+  .input_login {
+    padding:10px;
+    width:50%;
+    border-radius: 5px 5px 5px 5px;
+    margin-bottom: 10px;
+  }
+  
+  .buttonLogin {
+    padding:10px;
+    color:white;
+    background-color: #4CAF50;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+ .login_row {
+    align-content: center;
+    box-align:inherit;
+  }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home Page</title>
+    <title>Login CueLogic</title>
+    <link rel="stylesheet" type="text/css" href="../css/login.css" >
+</head>
+<body>
+    <script src="../../Registration Project/js/login.js" type="text/javascript"></script>   
+    <form >
+    <div class="container" align=center>
+        <h1><Strong>Login Page</Strong></h1>
+        <div >
+            <input class="input_login" type="text" id="username" name="username" placeholder="Enter username">
+        </div>
+        <div >
+            <input class="input_login" type="password" id="password" name="password" placeholder="Enter password">
+        </div>
+
+        <div >
+            <button class="buttonLogin" type="button" onclick="login.validate()">Login </button>
+        </div>
+
+        <Label >Don't have an account?</Label>
+        <a href="javascript:void(0);" onclick="login.redirectToRegistration()">Register</a> 
+        <label>here</label>
+    </div>
+    </form>
+</body>
+</html>

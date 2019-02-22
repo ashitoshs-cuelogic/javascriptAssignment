@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: grey;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+    background-color: white;
+    margin: auto;
+    width: 60%;
+    border-radius: 15px 15px 15px 15px;
+  }
+  
+  input {
+    padding: 15px;
+    margin: 5px 0 1px 0;
+    display: inline-block;
+    border: none;
+  }
+
+  input[type=text], input[type=password] {
+    width: 48%;
+    border-radius: 5px 5px 5px 5px;
+    background: #ddd;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+  /* Set a style for the submit button */
+  .registerbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  label {
+    font-size: 15px;
+    padding: 15px;
+  }
+
+  #success_msg {
+    color: green;
+  }
+
+  .hide {
+    visibility: hidden;
+  }
+
+  .show {
+    visibility:visible;
+  }
+
+  .error {
+    color: red;
+    display: none;
+  }

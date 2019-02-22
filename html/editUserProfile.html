@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit User Details</title>
+    <link rel="stylesheet" type="text/css" href="../css/registration.css" >
+</head>
+<body  align=center>
+    <script src="../../Registration Project/js/registration.js" type="text/javascript"></script> 
+<form id="registrationFrom" autocomplete="off" onsubmit="return false;" >
+  <div class="container">
+    <h1>Edit User Details</h1>
+    <div id="success_msg"></div>
+    <div>
+      <input type="text" placeholder="Enter First Name" name="fName" id="fName">
+    </div>
+
+    <div>
+      <input type="text" placeholder="Enter Last Name" name="lName" id="lName">
+    </div>
+
+    <div>
+      <input type="text" placeholder="Address" name="address" id="address">
+    </div>
+
+    <div style="margin-top: 20px;">
+      <div>
+        <label for="gender">Select Gender:</label>
+      </div>
+      <div>
+        <input type="radio" id="male" name="gender" value="male"> Male
+        <input type="radio" id="female" name="gender" value="female"> Female
+      </div>
+    </div>
+
+    <div>
+      <label for="profilePic">Profile Pic:</label>
+      <input type="file" name="fileToUpload" id="fileToUpload"  onchange="previewProfilePic()" placeholder="Upload Profile Image">
+      <img id="profilePic" src="" height="100" alt="Image preview">  
+    </div>
+    
+    <button type="submit" class="registerbtn" onclick="registration.updateUserDetails()" ><strong>Update</strong></button>
+   or <a href="javascript:void(0)" onclick="registration.redirectUserProfile();">Cancel</a>
+  </div>
+</form>
+
+</body>
+</html>
+
+<script>
+window.onload = function(){
+    var currentLocation = new URL( window.location.href );
+    var editUsername    = currentLocation.searchParams.get("username");
+  
+    var editUserDetails = JSON.parse( localStorage.getItem( editUsername ) );
+    if( typeof( editUserDetails ) == 'object' && editUserDetails !== null ) {
+        document.getElementById("fName").value    = editUserDetails.fName;
+        document.getElementById('lName').value    = editUserDetails.lName;
+        document.getElementById('address').value  = editUserDetails.address;
+        document.getElementById( editUserDetails.gender ).checked = true;  
+
+        registration.previewProfilePic();
+
+        var preview = document.querySelector('img');
+        preview.src = editUserDetails.profilePic;
+    } else {
+        window.open ('index.html','_self',false);
+    }
+}
+</script>
+

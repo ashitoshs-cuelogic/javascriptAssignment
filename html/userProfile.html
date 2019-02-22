@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<style >
+  table {
+    width:100%;
+    padding:10px;
+  }
+
+  tr {
+    width:100%;
+    padding:10px;
+    border:grey 1px solid;
+  }
+
+  tr th {
+    padding:10px;
+    background-color: green;
+    border:green 1px solid;
+    color: white;
+  }
+</style>
+<body align=center>
+<script src="../../Registration Project/js/userProfile.js" type="text/javascript"></script> 
+<form id="userProfileFrom" autocomplete="off" onsubmit="return false;" >
+  <div >
+    <a style="float:right" href="javascript:void(0);" onclick="logout()">Logout</a> 
+    <br>
+    <button style="float:right" onclick="redirectToCreateToDo()" > Create To-Do</button>
+    <button style="float:right" onclick="redirectToDo()" > List To-Do</button>
+    <h1>User Details</h1>
+    <script>        
+        showUserDetails();            
+    </script>              
+  </div>
+</form>
+</body>
+</html>
+

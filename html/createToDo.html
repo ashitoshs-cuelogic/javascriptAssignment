@@ -1,0 +1,108 @@
+<html>
+    <head>
+         <title>Create To-Do</title>
+          <script src="../../Registration Project/js/todo.js" type="text/javascript"></script>
+    </head>
+    <style >
+     .form-row {
+          padding:10px;
+          align-content: center;
+          box-align:inherit;
+          width:100%;
+          float: left;
+     }
+
+     .form-input {
+          padding:5px;
+          width:50%;
+          border-radius: 5px 5px 5px 5px;
+     }
+
+     .buttonLogin {
+          padding:10px;
+          color:white;
+          background-color: #4CAF50;
+          border-radius: 5px 5px 5px 5px;
+          border:hidden;
+     }
+     
+     body {
+          box-sizing: border-box; 
+          font-family: Arial, Helvetica, sans-serif; 
+          background-color: gray;
+     }
+
+     .container {
+          width:80%; 
+          border:1px solid black; 
+          border-radius: 15px 15px 15px 15px; 
+          background-color:white; 
+          position: fixed;
+          top: 10%; 
+          left: 10%; 
+          padding: 25px;
+     }
+
+     .hide {
+          visibility: hidden;
+     }
+
+     .show {
+          display: block;
+
+     }
+
+     .error {
+          color: red;
+     }
+
+    </style>
+     <body onload="fillToDoData();">
+          <div class="container">
+               <form name="todoapp">
+                    <div class="form-row" >
+                         <label for="title">To-Do Title:</label>
+                         <input class="form-input" type="text" id="title"><br>
+                         <lable class="error" id="titleErr"></lable>
+                    </div>
+
+                    <div class="form-row" >
+                         <label for="tododate">Select Date:</label>
+                         <input class="form-input" type="date" id="tododate"><br>
+                         <lable class="error" id="tododateErr"></lable>
+                    </div>
+                    <div class="form-row" >
+                         <label>Categories : </label>
+                         <label><input type="checkbox"  name="categories[]" id="done"  value="Done">Done</label>
+                         <label><input type="checkbox" name="categories[]" id="pending" value="Pending">Pending</label>
+                         <label><input type="checkbox" name="categories[]" id="isReminder" onclick="isReminderDate()" value="isreminder" >Is Reminder</label><br>
+                         <lable class="error" id="categoriesErr"></lable>
+                    </div>
+
+                   <div class="form-row" >
+                        <label for="reminderDate">Reminder Date:</label>
+                        <input type="date" class="form-input" id="reminderDate" disabled="true"><br>
+                        <lable class="error" id="reminderDateErr"></lable>
+                    </div>
+
+                   <div class="form-row" >
+                         <label>Is Public:</label>
+                         <label style="margin-bottom:10px;" class="form-input" >Yes : </label><input type="radio" name="ispublic" id="ispublicYes" value="yes" checked>
+                         <label style="margin-bottom:10px;" class="checkbox-inline"> No : </label><input type="radio" name="ispublic" id="ispublicNo" value="no" >
+                   </div>
+
+                   <div class="form-row" >
+                        <label for="usr">Upload Profile : </label>
+                        <input type="file" onchange="previewFile()"><br>  
+                        <img id="profilePic" height="100" alt="Image preview">  
+                        <lable class="error" id="profilePicErr"></lable>
+                   </div>
+                   
+                  <div class="form-row" >
+                  <button type="button" class="buttonLogin" onclick="createToDo()">Submit</button> or 
+                  <a href="javascript:void(0)" onclick="backToUserProfile()">Cancel</a>
+                  </div> 
+               </form>
+          </div>
+     </body>   
+</html>
